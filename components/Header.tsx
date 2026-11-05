@@ -37,17 +37,17 @@ export default function Header({
             onClick={onReset}
             className="flex items-center gap-3 cursor-pointer group select-none"
           >
-            {/* OnePlus Iconic Red Square */}
+            {/* Logo Badge */}
             <div className="w-8 h-8 rounded-lg bg-[#EB0029] flex items-center justify-center text-white font-black text-sm tracking-tighter shadow-[0_0_15px_rgba(235,0,41,0.5)] group-hover:scale-105 transition-transform">
-              1+
+              FL
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-base tracking-tight text-white group-hover:text-[#EB0029] transition-colors">
                   FundLarper
                 </span>
-                <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-[#EB0029] text-white uppercase tracking-widest">
-                  NEVER SETTLE
+                <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-[#262626] text-op-grey-300 uppercase tracking-widest border border-[#3D3D3D]">
+                  PITCH AUDIT
                 </span>
               </div>
               <p className="text-[10px] text-op-grey-400 font-mono tracking-wider hidden sm:block">
