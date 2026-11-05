@@ -6,7 +6,7 @@ export const INVESTOR_PERSONAS: Record<string, PersonaConfig> = {
     name: 'Val (Validator AI Lead)',
     tagline: 'Objective, data-driven startup validator. Identifies fatal flaws, elevator pitches & customer friction.',
     avatar: '🔴',
-    toneDescription: 'Direct, analytical, structured like a top-tier venture incubator analyst. Never settles for vague answers.',
+    toneDescription: 'Direct, analytical, structured like a venture incubator analyst. Refuses vague answers.',
   },
   yc_partner: {
     id: 'yc_partner',
