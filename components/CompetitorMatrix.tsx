@@ -15,21 +15,21 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
   const getThreatBadge = (level: 'Direct' | 'Indirect' | 'Incumbent') => {
     switch (level) {
       case 'Direct':
-        return 'bg-[#EB0029] text-white border-[#EB0029]';
+        return 'bg-[#E05656] text-white border-[#E05656]';
       case 'Incumbent':
-        return 'bg-[#1E1E1E] text-white border-white/40';
+        return 'bg-[#2C2C30] text-white border-white/40';
       default:
-        return 'bg-[#181818] text-op-grey-300 border-[#2E2E2E]';
+        return 'bg-[#232326] text-op-grey-300 border-[#36363B]';
     }
   };
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500 text-white">
       {/* Header Overview Banner */}
-      <div className="p-6 rounded-2xl bg-[#121212] border border-[#262626] space-y-3 shadow-op-card">
+      <div className="p-6 rounded-2xl bg-[#232326] border border-[#36363B] space-y-3 shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#EB0029]/15 border border-[#EB0029]/30 flex items-center justify-center text-[#EB0029]">
+            <div className="w-8 h-8 rounded-lg bg-[#E05656]/15 border border-[#E05656]/30 flex items-center justify-center text-[#E05656]">
               <Layers className="w-4 h-4" />
             </div>
             <div>
@@ -39,8 +39,8 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
               <p className="text-xs text-op-grey-400">Analysis of market crowding, incumbents, and your differentiation edge</p>
             </div>
           </div>
-          <div className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#1A1A1A] border border-[#2E2E2E] text-white">
-            Crowding: <span className="text-[#EB0029]">{comp.crowdingLevel}</span>
+          <div className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#1A1A1A] border border-[#36363B] text-white">
+            Crowding: <span className="text-[#E05656]">{comp.crowdingLevel}</span>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
       {/* Identified Existing Competitors & Projects */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Target className="w-4 h-4 text-[#EB0029]" />
+          <Target className="w-4 h-4 text-[#E05656]" />
           <h4 className="text-sm font-bold uppercase tracking-wider font-mono text-white">
             Identified Competitors & Market Alternatives
           </h4>
@@ -62,7 +62,7 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
           {existing.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl bg-[#121212] border border-[#262626] hover:border-[#3D3D3D] transition flex flex-col justify-between space-y-3 shadow-op-card"
+              className="p-5 rounded-xl bg-[#232326] border border-[#36363B] hover:border-[#47474E] transition flex flex-col justify-between space-y-3 shadow-sm"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
@@ -76,8 +76,8 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#262626]">
-                <p className="text-[10px] uppercase font-mono text-[#EB0029] font-bold mb-1">
+              <div className="pt-3 border-t border-[#36363B]">
+                <p className="text-[10px] uppercase font-mono text-[#E05656] font-bold mb-1">
                   Your Differentiator / Moat
                 </p>
                 <p className="text-xs text-op-grey-100 leading-relaxed">
@@ -90,9 +90,9 @@ export default function CompetitorMatrix({ report }: CompetitorMatrixProps) {
       </div>
 
       {/* The White Space Opportunity */}
-      <div className="p-6 rounded-2xl bg-[#121212] border-l-4 border-l-[#EB0029] border border-[#262626] shadow-op-card space-y-2">
+      <div className="p-6 rounded-2xl bg-[#232326] border-l-4 border-l-[#E05656] border border-[#36363B] shadow-sm space-y-2">
         <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest font-mono">
-          <Compass className="w-4 h-4 text-[#EB0029]" />
+          <Compass className="w-4 h-4 text-[#E05656]" />
           <span>The Unoccupied White Space</span>
         </div>
         <p className="text-xs sm:text-sm text-op-grey-100 leading-relaxed">

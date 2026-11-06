@@ -150,11 +150,11 @@ ${report.actionPlan.ninetyDayMilestones.map(m => `* **${m.timeline} (${m.focus})
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md text-white">
-      <div className="relative w-full max-w-3xl bg-[#121212] border border-[#262626] rounded-3xl p-6 shadow-2xl max-h-[85vh] flex flex-col">
+      <div className="relative w-full max-w-3xl bg-[#232326] border border-[#36363B] rounded-3xl p-6 shadow-2xl max-h-[85vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#262626] pb-4 mb-4">
+        <div className="flex items-center justify-between border-b border-[#36363B] pb-4 mb-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#EB0029] flex items-center justify-center text-white">
+            <div className="w-8 h-8 rounded-lg bg-[#E05656] flex items-center justify-center text-white">
               <FileText className="w-4 h-4" />
             </div>
             <div>
@@ -164,14 +164,14 @@ ${report.actionPlan.ninetyDayMilestones.map(m => `* **${m.timeline} (${m.focus})
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-op-grey-400 hover:text-white rounded-lg hover:bg-[#1C1C1C] transition"
+            className="p-1.5 text-op-grey-400 hover:text-white rounded-lg hover:bg-[#2C2C30] transition"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content Preview */}
-        <div className="flex-1 overflow-y-auto bg-[#0A0A0A] p-5 rounded-2xl border border-[#262626] font-mono text-xs text-op-grey-200 whitespace-pre-wrap leading-relaxed select-text">
+        <div className="flex-1 overflow-y-auto bg-[#18181A] p-5 rounded-2xl border border-[#36363B] font-mono text-xs text-op-grey-200 whitespace-pre-wrap leading-relaxed select-text">
           {markdownContent}
         </div>
 
@@ -184,21 +184,21 @@ ${report.actionPlan.ninetyDayMilestones.map(m => `* **${m.timeline} (${m.focus})
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopy}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-white text-xs font-semibold border border-[#2E2E2E] transition"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#2C2C30] hover:bg-[#36363B] text-white text-xs font-semibold border border-[#36363B] transition"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-[#EB0029]" /> : <Copy className="w-3.5 h-3.5" />}
+              {copied ? <Check className="w-3.5 h-3.5 text-[#E05656]" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'Copied!' : 'Copy Markdown'}</span>
             </button>
             <button
               onClick={handleDownload}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-white text-xs font-semibold border border-[#2E2E2E] transition"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#2C2C30] hover:bg-[#36363B] text-white text-xs font-semibold border border-[#36363B] transition"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download .md</span>
             </button>
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EB0029] hover:bg-[#B8001F] text-white text-xs font-bold uppercase tracking-wider transition shadow-op-red-sm"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#E05656] hover:bg-[#C94545] text-white text-xs font-bold uppercase tracking-wider transition shadow-sm"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / PDF</span>

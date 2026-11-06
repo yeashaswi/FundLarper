@@ -29,29 +29,28 @@ export default function Header({
   const activePersona = INVESTOR_PERSONAS[currentPersona] || INVESTOR_PERSONAS.val_ai;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[#262626] bg-[#0A0A0A]/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 w-full border-b border-[#2A2A2E] bg-[#18181A]/85 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-        {/* Brand Logo: OnePlus Aesthetic */}
+        {/* Brand Logo */}
         <div className="flex items-center gap-3">
           <div
             onClick={onReset}
             className="flex items-center gap-3 cursor-pointer group select-none"
           >
-            {/* Logo Badge */}
-            <div className="w-8 h-8 rounded-lg bg-[#EB0029] flex items-center justify-center text-white font-black text-sm tracking-tighter shadow-[0_0_15px_rgba(235,0,41,0.5)] group-hover:scale-105 transition-transform">
+            <div className="w-8 h-8 rounded-lg bg-[#232326] border border-[#36363B] flex items-center justify-center text-[#F4F4F6] font-serif font-bold text-sm tracking-tight shadow-sm group-hover:border-[#47474E] transition-colors">
               FL
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-base tracking-tight text-white group-hover:text-[#EB0029] transition-colors">
+                <span className="font-serif font-medium text-lg tracking-tight text-[#F4F4F6]">
                   FundLarper
                 </span>
-                <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-[#262626] text-op-grey-300 uppercase tracking-widest border border-[#3D3D3D]">
-                  PITCH AUDIT
+                <span className="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-[#232326] text-[#85858D] border border-[#36363B]">
+                  Pitch Audit
                 </span>
               </div>
-              <p className="text-[10px] text-op-grey-400 font-mono tracking-wider hidden sm:block">
-                VALIDATOR AI • 8-DIMENSION RATING
+              <p className="text-[11px] text-[#85858D] hidden sm:block">
+                8-Dimension Diligence & Sanity Check
               </p>
             </div>
           </div>
@@ -66,16 +65,16 @@ export default function Header({
                 setShowSampleMenu(!showSampleMenu);
                 setShowPersonaMenu(false);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#141414] border border-[#2E2E2E] hover:border-[#EB0029] text-op-grey-200 hover:text-white text-xs font-medium transition"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#232326] border border-[#36363B] hover:border-[#47474E] text-[#BFBFC5] hover:text-[#F4F4F6] text-xs font-medium transition"
             >
-              <Lightbulb className="w-3.5 h-3.5 text-[#EB0029]" />
+              <Lightbulb className="w-3.5 h-3.5 text-[#E05656]" />
               <span className="hidden md:inline">Benchmark Pitches</span>
-              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+              <ChevronDown className="w-3.5 h-3.5 text-[#85858D]" />
             </button>
 
             {showSampleMenu && (
-              <div className="absolute right-0 mt-2 w-72 bg-[#141414] border border-[#2E2E2E] rounded-2xl p-2 shadow-2xl z-50 text-xs space-y-1 animate-in fade-in zoom-in-95 duration-150">
-                <div className="px-2.5 py-1.5 text-[10px] font-mono uppercase text-op-grey-400 font-bold">
+              <div className="absolute right-0 mt-2 w-72 bg-[#1E1E21] border border-[#36363B] rounded-xl p-1.5 shadow-xl z-50 text-xs space-y-1">
+                <div className="px-2.5 py-1 text-[10px] uppercase text-[#85858D] font-medium tracking-wider">
                   Select a Benchmark Startup:
                 </div>
                 {SAMPLE_PITCHES.map((sample) => (
@@ -85,15 +84,15 @@ export default function Header({
                       onSelectSamplePitch(sample);
                       setShowSampleMenu(false);
                     }}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-[#1F1F1F] transition flex flex-col gap-0.5"
+                    className="w-full text-left p-2.5 rounded-lg hover:bg-[#2C2C30] transition flex flex-col gap-0.5"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-semibold text-white">{sample.name}</span>
-                      <span className="text-[10px] text-[#EB0029] font-mono bg-[#EB0029]/10 px-1.5 py-0.5 rounded">
+                      <span className="font-medium text-[#F4F4F6]">{sample.name}</span>
+                      <span className="text-[10px] text-[#85858D] font-mono bg-[#232326] px-1.5 py-0.5 rounded border border-[#2A2A2E]">
                         {sample.category}
                       </span>
                     </div>
-                    <span className="text-[11px] text-op-grey-400 line-clamp-1">
+                    <span className="text-[11px] text-[#85858D] line-clamp-1">
                       {sample.shortDescription}
                     </span>
                   </button>
@@ -109,17 +108,17 @@ export default function Header({
                 setShowPersonaMenu(!showPersonaMenu);
                 setShowSampleMenu(false);
               }}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#141414] border border-[#2E2E2E] hover:border-[#EB0029] text-white text-xs font-medium transition"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#232326] border border-[#36363B] hover:border-[#47474E] text-[#F4F4F6] text-xs font-medium transition"
             >
               <span>{activePersona.avatar}</span>
               <span className="hidden lg:inline">{activePersona.name}</span>
-              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+              <ChevronDown className="w-3.5 h-3.5 text-[#85858D]" />
             </button>
 
             {showPersonaMenu && (
-              <div className="absolute right-0 mt-2 w-80 bg-[#141414] border border-[#2E2E2E] rounded-2xl p-2 shadow-2xl z-50 text-xs space-y-1 animate-in fade-in zoom-in-95 duration-150">
-                <div className="px-2.5 py-1.5 text-[10px] font-mono uppercase text-op-grey-400 font-bold">
-                  Select Reviewer Persona:
+              <div className="absolute right-0 mt-2 w-80 bg-[#1E1E21] border border-[#36363B] rounded-xl p-1.5 shadow-xl z-50 text-xs space-y-1">
+                <div className="px-2.5 py-1 text-[10px] uppercase text-[#85858D] font-medium tracking-wider">
+                  Reviewer Perspective:
                 </div>
                 {Object.values(INVESTOR_PERSONAS).map((p) => {
                   const isSelected = p.id === currentPersona;
@@ -130,19 +129,21 @@ export default function Header({
                         onPersonaChange(p.id);
                         setShowPersonaMenu(false);
                       }}
-                      className={`w-full text-left p-2.5 rounded-xl transition flex items-start gap-2.5 ${
-                        isSelected ? 'bg-[#EB0029]/15 border border-[#EB0029]/40' : 'hover:bg-[#1F1F1F]'
+                      className={`w-full text-left p-2.5 rounded-lg transition flex items-start gap-2.5 ${
+                        isSelected ? 'bg-[#2C2C30] text-[#F4F4F6] border border-[#36363B]' : 'hover:bg-[#232326] text-[#BFBFC5]'
                       }`}
                     >
-                      <span className="text-xl shrink-0">{p.avatar}</span>
+                      <span className="text-lg shrink-0">{p.avatar}</span>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between">
-                          <span className={`font-semibold ${isSelected ? 'text-[#EB0029]' : 'text-white'}`}>
+                          <span className={`font-medium ${isSelected ? 'text-[#F4F4F6]' : 'text-[#BFBFC5]'}`}>
                             {p.name}
                           </span>
-                          {isSelected && <Check className="w-3.5 h-3.5 text-[#EB0029]" />}
+                          {isSelected && <Check className="w-3.5 h-3.5 text-[#5BA887]" />}
                         </div>
-                        <p className="text-[11px] text-op-grey-400 line-clamp-1">{p.tagline}</p>
+                        <p className="text-[11px] text-[#85858D] line-clamp-2 mt-0.5">
+                          {p.tagline}
+                        </p>
                       </div>
                     </button>
                   );
@@ -151,34 +152,28 @@ export default function Header({
             )}
           </div>
 
-          {/* AI Engine Status Button */}
+          {/* API Key Modal Button */}
           <button
             onClick={onOpenApiKeyModal}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition ${
               hasCustomKey
-                ? 'bg-[#EB0029]/15 text-white border-[#EB0029]'
-                : 'bg-[#141414] text-op-grey-300 border-[#2E2E2E] hover:text-white'
+                ? 'bg-[#5BA887]/15 text-[#5BA887] border-[#5BA887]/30 hover:bg-[#5BA887]/25'
+                : 'bg-[#232326] hover:bg-[#2C2C30] text-[#85858D] hover:text-[#F4F4F6] border-[#36363B]'
             }`}
-            title="Configure AI API Key"
           >
-            <Key className="w-3.5 h-3.5 text-[#EB0029]" />
+            <Key className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">
-              {hasCustomKey ? 'Gemini 2.5 Active' : 'AI Engine'}
+              {hasCustomKey ? 'Key Active' : 'API Key'}
             </span>
-            <span
-              className={`w-2 h-2 rounded-full ${
-                hasCustomKey ? 'bg-[#EB0029]' : 'bg-op-grey-500'
-              }`}
-            />
           </button>
 
-          {/* Reset Pitch Button */}
+          {/* Reset / New Pitch Button */}
           <button
             onClick={onReset}
-            className="p-2 rounded-xl bg-[#141414] border border-[#2E2E2E] hover:border-[#EB0029] text-op-grey-400 hover:text-white transition"
-            title="Start New Pitch"
+            title="Start new evaluation"
+            className="p-2 rounded-lg bg-[#232326] hover:bg-[#2C2C30] border border-[#36363B] text-[#85858D] hover:text-[#F4F4F6] transition"
           >
-            <RotateCcw className="w-4 h-4" />
+            <RotateCcw className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>

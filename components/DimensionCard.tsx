@@ -46,14 +46,14 @@ export default function DimensionCard({
   };
 
   return (
-    <div className="bg-[#121212] border border-[#262626] rounded-2xl overflow-hidden hover:border-[#3D3D3D] transition shadow-op-card">
+    <div className="bg-[#232326] border border-[#36363B] rounded-2xl overflow-hidden hover:border-[#47474E] transition shadow-sm">
       {/* Header */}
       <div
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between p-4 cursor-pointer select-none bg-[#161616] hover:bg-[#1A1A1A] transition"
+        className="flex items-center justify-between p-4 cursor-pointer select-none bg-[#232326] hover:bg-[#1A1A1A] transition"
       >
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#EB0029]/15 text-[#EB0029] border border-[#EB0029]/30">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#E05656]/15 text-[#E05656] border border-[#E05656]/30">
             {getIcon()}
           </div>
           <div>
@@ -64,7 +64,7 @@ export default function DimensionCard({
 
         <div className="flex items-center gap-3">
           {/* Numerical Score Badge */}
-          <div className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#EB0029] text-white shadow-[0_0_8px_rgba(235,0,41,0.4)]">
+          <div className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#E05656] text-white shadow-[0_0_8px_rgba(235,0,41,0.4)]">
             {dimension.score.toFixed(1)} / 10
           </div>
           <button className="text-op-grey-400 hover:text-white transition">
@@ -74,9 +74,9 @@ export default function DimensionCard({
       </div>
 
       {/* Progress Bar under header: OnePlus Red */}
-      <div className="w-full h-1 bg-[#1F1F1F]">
+      <div className="w-full h-1 bg-[#2C2C30]">
         <div
-          className="h-full bg-[#EB0029] transition-all duration-700"
+          className="h-full bg-[#E05656] transition-all duration-700"
           style={{ width: `${(dimension.score / 10) * 100}%` }}
         />
       </div>
@@ -90,7 +90,7 @@ export default function DimensionCard({
               {tags.map((tag, idx) => (
                 <div
                   key={idx}
-                  className="px-2.5 py-1 rounded-md bg-[#1C1C1C] border border-[#2E2E2E] text-white text-[11px]"
+                  className="px-2.5 py-1 rounded-md bg-[#2C2C30] border border-[#36363B] text-white text-[11px]"
                 >
                   <span className="text-op-grey-400 mr-1.5">{tag.label}:</span>
                   <span className="font-semibold text-white">{tag.value}</span>
@@ -107,7 +107,7 @@ export default function DimensionCard({
           {/* Strengths & Weaknesses Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
             {dimension.strengths && dimension.strengths.length > 0 && (
-              <div className="p-3 rounded-xl bg-[#181818] border border-[#2E2E2E] space-y-1.5">
+              <div className="p-3 rounded-xl bg-[#232326] border border-[#36363B] space-y-1.5">
                 <div className="flex items-center gap-1.5 text-white font-bold text-[11px] font-mono uppercase tracking-wider">
                   <Check className="w-3.5 h-3.5 text-white" />
                   <span>Key Strengths</span>
@@ -115,7 +115,7 @@ export default function DimensionCard({
                 <ul className="space-y-1 text-op-grey-200 text-[11px]">
                   {dimension.strengths.map((str, i) => (
                     <li key={i} className="flex items-start gap-1.5">
-                      <span className="text-[#EB0029] font-bold">•</span>
+                      <span className="text-[#E05656] font-bold">•</span>
                       <span>{str}</span>
                     </li>
                   ))}
@@ -124,15 +124,15 @@ export default function DimensionCard({
             )}
 
             {dimension.weaknesses && dimension.weaknesses.length > 0 && (
-              <div className="p-3 rounded-xl bg-[#EB0029]/10 border border-[#EB0029]/30 space-y-1.5">
-                <div className="flex items-center gap-1.5 text-[#EB0029] font-bold text-[11px] font-mono uppercase tracking-wider">
-                  <AlertTriangle className="w-3.5 h-3.5 text-[#EB0029]" />
+              <div className="p-3 rounded-xl bg-[#E05656]/10 border border-[#E05656]/30 space-y-1.5">
+                <div className="flex items-center gap-1.5 text-[#E05656] font-bold text-[11px] font-mono uppercase tracking-wider">
+                  <AlertTriangle className="w-3.5 h-3.5 text-[#E05656]" />
                   <span>Risks & Vulnerabilities</span>
                 </div>
                 <ul className="space-y-1 text-op-grey-100 text-[11px]">
                   {dimension.weaknesses.map((weak, i) => (
                     <li key={i} className="flex items-start gap-1.5">
-                      <span className="text-[#EB0029] font-bold">•</span>
+                      <span className="text-[#E05656] font-bold">•</span>
                       <span>{weak}</span>
                     </li>
                   ))}
@@ -143,8 +143,8 @@ export default function DimensionCard({
 
           {/* Key Metric or Insight Highlight */}
           {dimension.keyMetricOrInsight && (
-            <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#181818] border border-[#2E2E2E] text-white text-[11px]">
-              <Lightbulb className="w-3.5 h-3.5 text-[#EB0029] shrink-0" />
+            <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#232326] border border-[#36363B] text-white text-[11px]">
+              <Lightbulb className="w-3.5 h-3.5 text-[#E05656] shrink-0" />
               <span>
                 <strong className="text-white">Validator Insight:</strong> {dimension.keyMetricOrInsight}
               </span>

@@ -294,7 +294,7 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#090d16] text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[#18181A] text-[#BFBFC5]">
       {/* Top Navigation */}
       <Header
         currentPersona={persona}
@@ -308,14 +308,14 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
         {/* Workspace Tab Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-slate-800">
-          <div className="flex items-center gap-1.5 sm:gap-2 p-1 bg-slate-900/90 rounded-2xl border border-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-[#2A2A2E]">
+          <div className="flex items-center gap-1.5 sm:gap-2 p-1 bg-[#1E1E21] rounded-xl border border-[#2A2A2E]">
             <button
               onClick={() => setActiveTab('chat')}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition ${
                 activeTab === 'chat'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                  ? 'bg-[#2C2C30] text-[#F4F4F6] border border-[#36363B] shadow-sm'
+                  : 'text-[#85858D] hover:text-[#F4F4F6] hover:bg-[#232326]'
               }`}
             >
               <MessageSquare className="w-4 h-4" />
@@ -324,16 +324,16 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
 
             <button
               onClick={() => setActiveTab('scorecard')}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition ${
                 activeTab === 'scorecard'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                  ? 'bg-[#2C2C30] text-[#F4F4F6] border border-[#36363B] shadow-sm'
+                  : 'text-[#85858D] hover:text-[#F4F4F6] hover:bg-[#232326]'
               }`}
             >
               <BarChart3 className="w-4 h-4" />
               <span>8-Dimension Scorecard</span>
               {report && (
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-950/40 font-bold ml-1">
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-[#18181A] text-[#BFBFC5] border border-[#36363B] font-bold ml-1">
                   {report.overallScore}/100
                 </span>
               )}
@@ -341,10 +341,10 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
 
             <button
               onClick={() => setActiveTab('competitors')}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition ${
                 activeTab === 'competitors'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                  ? 'bg-[#2C2C30] text-[#F4F4F6] border border-[#36363B] shadow-sm'
+                  : 'text-[#85858D] hover:text-[#F4F4F6] hover:bg-[#232326]'
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -353,10 +353,10 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
 
             <button
               onClick={() => setActiveTab('roadmap')}
-              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition ${
                 activeTab === 'roadmap'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                  ? 'bg-[#2C2C30] text-[#F4F4F6] border border-[#36363B] shadow-sm'
+                  : 'text-[#85858D] hover:text-[#F4F4F6] hover:bg-[#232326]'
               }`}
             >
               <Zap className="w-4 h-4" />
@@ -368,9 +368,9 @@ Check the **8-Dimension Scorecard** tab for the full radar chart and breakdown, 
           {report && (
             <button
               onClick={() => setExportModalOpen(true)}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-xs font-semibold transition"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-[#232326] hover:bg-[#2C2C30] text-[#BFBFC5] hover:text-[#F4F4F6] border border-[#36363B] text-xs font-medium transition"
             >
-              <FileText className="w-4 h-4 text-emerald-400" />
+              <FileText className="w-4 h-4 text-[#85858D]" />
               <span>Export Memo</span>
             </button>
           )}

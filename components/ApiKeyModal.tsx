@@ -36,11 +36,11 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md text-white">
-      <div className="relative w-full max-w-lg bg-[#121212] border border-[#262626] rounded-3xl p-6 shadow-2xl">
+      <div className="relative w-full max-w-lg bg-[#232326] border border-[#36363B] rounded-3xl p-6 shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#262626] pb-4 mb-4">
+        <div className="flex items-center justify-between border-b border-[#36363B] pb-4 mb-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#EB0029] flex items-center justify-center text-white">
+            <div className="w-8 h-8 rounded-lg bg-[#E05656] flex items-center justify-center text-white">
               <Key className="w-4 h-4" />
             </div>
             <div>
@@ -50,7 +50,7 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-op-grey-400 hover:text-white rounded-lg hover:bg-[#1C1C1C] transition"
+            className="p-1.5 text-op-grey-400 hover:text-white rounded-lg hover:bg-[#2C2C30] transition"
           >
             <X className="w-5 h-5" />
           </button>
@@ -58,9 +58,9 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
 
         {/* Informational Banner */}
         <div className="space-y-4 text-xs">
-          <div className="p-4 rounded-xl bg-[#1A1A1A] border border-[#2E2E2E] space-y-1.5">
+          <div className="p-4 rounded-xl bg-[#1A1A1A] border border-[#36363B] space-y-1.5">
             <div className="flex items-center gap-1.5 text-white font-bold font-mono uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#EB0029]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#E05656]"></span>
               <span>Built-in Validator Works Out of the Box</span>
             </div>
             <p className="text-[11px] text-op-grey-300 leading-relaxed">
@@ -77,7 +77,7 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
               value={tempKey}
               onChange={(e) => setTempKey(e.target.value)}
               placeholder="AIzaSy..."
-              className="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0A0A] border border-[#2E2E2E] focus:border-[#EB0029] focus:outline-none text-white text-xs font-mono placeholder:text-op-grey-600 transition"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-[#18181A] border border-[#36363B] focus:border-[#E05656] focus:outline-none text-white text-xs font-mono placeholder:text-op-grey-600 transition"
             />
             <div className="flex items-center justify-between mt-1.5 text-[11px]">
               <span className="text-op-grey-400 font-mono">Stored securely in local browser storage</span>
@@ -85,7 +85,7 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
                 href="https://aistudio.google.com/app/apikey"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#EB0029] hover:underline flex items-center gap-1 font-mono font-semibold"
+                className="text-[#E05656] hover:underline flex items-center gap-1 font-mono font-semibold"
               >
                 <span>Get free Gemini key</span>
                 <ExternalLink className="w-3 h-3" />
@@ -93,8 +93,8 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
             </div>
           </div>
 
-          <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#181818] border border-[#262626] text-[11px] text-op-grey-300">
-            <ShieldCheck className="w-4 h-4 text-[#EB0029] shrink-0" />
+          <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#232326] border border-[#36363B] text-[11px] text-op-grey-300">
+            <ShieldCheck className="w-4 h-4 text-[#E05656] shrink-0" />
             <span>Zero telemetry: keys are never saved to our database or transmitted to any third party.</span>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
           <button
             type="button"
             onClick={handleClear}
-            className="text-xs text-[#EB0029] hover:underline font-mono uppercase font-bold transition"
+            className="text-xs text-[#E05656] hover:underline font-mono uppercase font-bold transition"
           >
             Clear Stored Key
           </button>
@@ -113,14 +113,14 @@ export default function ApiKeyModal({ isOpen, onClose, apiKey, onSaveKey }: ApiK
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-[#1C1C1C] hover:bg-[#262626] text-white text-xs font-semibold uppercase tracking-wider transition"
+              className="px-4 py-2 rounded-xl bg-[#2C2C30] hover:bg-[#36363B] text-white text-xs font-semibold uppercase tracking-wider transition"
             >
               Cancel
             </button>
             <button
               type="button"
               onClick={handleSave}
-              className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#EB0029] hover:bg-[#B8001F] text-white text-xs font-bold uppercase tracking-wider transition shadow-op-red-sm"
+              className="flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#E05656] hover:bg-[#C94545] text-white text-xs font-bold uppercase tracking-wider transition shadow-sm"
             >
               {saved ? <Check className="w-4 h-4" /> : null}
               <span>{saved ? 'Saved!' : 'Save Key'}</span>

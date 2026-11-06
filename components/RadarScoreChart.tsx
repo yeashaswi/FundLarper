@@ -54,16 +54,16 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
     .join(' ');
 
   return (
-    <div className="relative flex flex-col items-center justify-center p-5 bg-[#121212] rounded-2xl border border-[#262626] shadow-op-card">
+    <div className="relative flex flex-col items-center justify-center p-5 bg-[#232326] rounded-2xl border border-[#36363B] shadow-sm">
       <div className="w-full flex items-center justify-between mb-3 px-1">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#EB0029] animate-pulse shadow-[0_0_8px_#EB0029]"></span>
+          <span className="w-2 h-2 rounded-full bg-[#E05656] animate-pulse shadow-[0_0_8px_#E05656]"></span>
           <h3 className="text-xs font-bold text-white uppercase tracking-widest font-mono">
             8-Dimension Viability Radar
           </h3>
         </div>
         <div className="text-xs text-op-grey-300 font-mono">
-          Avg: <span className="text-[#EB0029] font-bold">{(overallScore / 10).toFixed(1)}/10</span>
+          Avg: <span className="text-[#E05656] font-bold">{(overallScore / 10).toFixed(1)}/10</span>
         </div>
       </div>
 
@@ -74,9 +74,9 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
         >
           <defs>
             <radialGradient id="oneplusRadarGradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#EB0029" stopOpacity="0.55" />
-              <stop offset="60%" stopColor="#B8001F" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#0A0A0A" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#E05656" stopOpacity="0.55" />
+              <stop offset="60%" stopColor="#C94545" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#18181A" stopOpacity="0.05" />
             </radialGradient>
             <filter id="oneplusGlow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="3.5" result="blur" />
@@ -124,7 +124,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
           <polygon
             points={scorePoints}
             fill="url(#oneplusRadarGradient)"
-            stroke="#EB0029"
+            stroke="#E05656"
             strokeWidth="2.5"
             filter="url(#oneplusGlow)"
             className="transition-all duration-700 ease-out"
@@ -139,7 +139,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
                   cx={x}
                   cy={y}
                   r="4.5"
-                  fill="#EB0029"
+                  fill="#E05656"
                   stroke="#FFFFFF"
                   strokeWidth="1.5"
                   className="transition-transform group-hover:scale-150"
@@ -148,7 +148,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
                   cx={x}
                   cy={y}
                   r="9"
-                  fill="#EB0029"
+                  fill="#E05656"
                   className="opacity-0 group-hover:opacity-40 transition-opacity pointer-events-none"
                 />
               </g>
@@ -180,7 +180,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
                   x={x}
                   dy="13"
                   textAnchor={textAnchor}
-                  className="fill-[#EB0029] font-bold text-[10px]"
+                  className="fill-[#E05656] font-bold text-[10px]"
                 >
                   {axis.score.toFixed(1)}/10
                 </tspan>
@@ -192,7 +192,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
 
       <div className="mt-3 flex items-center justify-center gap-5 text-[11px] font-mono text-op-grey-300">
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#EB0029]"></span>
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#E05656]"></span>
           <span>Strong (≥ 8.0)</span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -200,7 +200,7 @@ export default function RadarScoreChart({ dimensions, overallScore }: RadarScore
           <span>Moderate (6.0 - 7.9)</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-[#3D3D3D]"></span>
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#47474E]"></span>
           <span>Critical (&lt; 6.0)</span>
         </div>
       </div>
